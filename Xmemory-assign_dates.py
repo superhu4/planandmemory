@@ -19,7 +19,7 @@ def create_dates_with_blanks(start_date, readings):
     updated_readings, all_dates = [], []
     current_date = datetime.datetime.strptime(start_date, '%m/%d/%Y')
     for reading in readings:
-        while current_date.weekday() != 6:  # if we have a weekend date, then
+        while current_date.weekday() != 6:  # if we have any day other than Sunday, then
             updated_readings.append("")  # insert blank value into our readings
             # also insert current date into our dates
             all_dates.append(current_date.strftime('%m/%d/%Y'))
